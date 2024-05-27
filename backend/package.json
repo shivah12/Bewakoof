@@ -5,10 +5,10 @@
   "main": "server.mjs",
   "scripts": {
     "dev": "node server.mjs",
-   "start": "nodemon -r esm app/server.mjs"
+    "start": "node server.mjs"
   },
   "homepage": "https://bewakoof-backend.onrender.com/",
-
+  "type": "module",
   "keywords": [],
   "author": "Shreeti Mohapatra",
   "license": "ISC",
