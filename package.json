@@ -4,7 +4,7 @@
   "description": "Bewakoof clone",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "node backend/server.mjs",
     "build": "cd frontend && npm install && npm run build"
   },
   "type": "module",
