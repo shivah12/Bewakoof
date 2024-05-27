@@ -10,12 +10,12 @@ import connection from "./src/Configs/db.js"; // Assuming db.js is retained as i
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5173;
 
 import userRouter from "./src/routes/user.route.js";
 import prodRouter from "./src/routes/products.routes.js";
 
-app.use(express.static(path.join(__dirname, "frontend", "dist")));
+app.use(express.static(path.join(__dirname, "frontend", "build")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -28,7 +28,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 });
 
 app.get("/", (req, res) => {
