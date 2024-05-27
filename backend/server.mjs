@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
-import userRouter from './routes/user.route.js';
+import userRouter from './routes/user.route';
 import prodRouter from './routes/products.routes.js';
 import connection from './src/Configs/db.js';
 
