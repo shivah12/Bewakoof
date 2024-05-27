@@ -5,7 +5,8 @@
   "main": "server.mjs",
   "scripts": {
     "dev": "node server.mjs",
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    
   },
   "homepage": "https://bewakoof-backend.onrender.com/",
   "type": "module",
