@@ -1,6 +1,7 @@
 # Bewakoof
 Inspired by bewakoof.com
-The main objective is to complete all main functionality of this e-commerce website, such as Login/Signup, Google authenication,Add/Buy and filter the product. We have completed this project in 5 days.
+The main objective is to complete all main functionality of this e-commerce website, such as Login/Signup, Google authenication,Add/Buy and filter the product. A personal project made using mern stack
+
 
 Bewakoof.com is an E-commerce website where a user can find different acessories for men and women.
 
