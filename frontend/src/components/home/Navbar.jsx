@@ -29,7 +29,7 @@ const Navbar = () => {
 
   const logout = () => {
     axios
-      .get("https://bewakoof-com-topaz.vercel.app/users/logout", {
+      .get("https://bewakoof12.vercel.app//users/logout", {
         withCredentials: true,
       })
       .then((res) => {
