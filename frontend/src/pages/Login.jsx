@@ -16,7 +16,6 @@ const Login = () => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
 
@@ -96,8 +95,14 @@ const Login = () => {
           </div>
 
           <GoogleLogin
-            onSuccess={(response) => console.log('Login Success:', response)}
-            onError={() => console.log('Login Failed')}
+            onSuccess={(response) => {
+              console.log('Login Success:', response);
+              alert('Login Successful');
+            }}
+            onError={() => {
+              console.error('Login Failed');
+              alert('Login Failed');
+            }}
             render={(renderProps) => (
               <button
                 onClick={renderProps.onClick}
@@ -194,15 +199,13 @@ const Login = () => {
           </small>
         </div>
       </div>
-      <div>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={handleClose}
-          message="We are only accepting Logins from Google!"
-          action={action}
-        />
-      </div>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="We are only accepting Logins from Google!"
+        action={action}
+      />
     </GoogleOAuthProvider>
   );
 };
