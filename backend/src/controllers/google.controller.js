@@ -14,7 +14,7 @@ const getGoogleUser = async (req, res) => {
     code,
     clientId: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    redirectUri: `https://localhost:5173/users/auth/google/callback`,
+    redirectUri: `https://bewakoof-backend.onrender.com/users/auth/google/callback`,
   });
 
   // Fetch the user's profile with the access token and bearer
@@ -31,7 +31,7 @@ const getGoogleUser = async (req, res) => {
     });
     console.log(token);
   }
-  res.redirect("https://localhost:5173/?" + token);
+  res.redirect("https://bewakoof-frontend.onrender.com/?" + token);
 };
 
 async function getTokens({ code, clientId, clientSecret, redirectUri }) {
