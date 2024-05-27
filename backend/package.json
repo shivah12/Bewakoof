@@ -5,7 +5,7 @@
   "main": "server.mjs",
   "scripts": {
     "dev": "node server.mjs",
-    "start": "node server.mjs"
+   "start": "nodemon --experimental-modules --es-module-specifier-resolution=node server.mjs"
   },
   "homepage": "https://bewakoof-backend.onrender.com/",
   "type": "module",
