@@ -1,29 +1,34 @@
-require("dotenv").config();
-const express = require("express");
-const app = express();
-const cors = require("cors");
-const connection = require("./src/Configs/db");
+// server.js
 
+import dotenv from "dotenv";
+import express from "express";
+import path from "path";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import connection from "./src/Configs/db.js"; // Assuming db.js is retained as it is
+
+dotenv.config();
+
+const app = express();
 const PORT = process.env.PORT;
 
-const userRouter = require("./src/routes/user.route");
-const prodRouter = require("./src/routes/products.routes");
-const cookieParser = require("cookie-parser");
+import userRouter from "./src/routes/user.route.js";
+import prodRouter from "./src/routes/products.routes.js";
 
-app.use(express.static(path.join(__dirname,"/frontend/dist")));
+app.use(express.static(path.join(__dirname, "frontend", "dist")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const corsOptions = {
   origin: true,
-  credentials: true, //included credentials as true
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname,"frontend","dist", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
 
 app.get("/", (req, res) => {
@@ -34,6 +39,11 @@ app.use("/users", userRouter);
 app.use("/", prodRouter);
 
 app.listen(PORT, async () => {
-  await connection;
+  try {
+    await connection;
+    console.log("Database connected successfully");
+  } catch (error) {
+    console.error("Database connection failed", error);
+  }
   console.log(`Server started at ${PORT}`);
 });
