@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Bewakoof clone",
-  "main": "server.cjs",
+  "main": "server.mjs",
   "scripts": {
-    "dev": "nodemon server.cjs",
-    "start": "nodemon server.cjs"
+    "dev": "nodemon server.mjs",
+    "start": "nodemon server.mjs"
   },
   "type": "module",
   "keywords": [],
