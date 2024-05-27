@@ -93,7 +93,7 @@ export const getUserbag = (id) => (dispatch) => {
   let token = localStorage.getItem("jwtoken");
 
   axios
-    .get(`https://bewakoof-com-topaz.vercel.app/users/cart/${id}`, {
+    .get(`https://bewakoof.onrender.com/users/cart/${id}`, {
       withCredentials: true,
       headers: {
         Authorization: token,
@@ -116,7 +116,7 @@ export const getUserWish = (id) => (dispatch) => {
   let token = localStorage.getItem("jwtoken");
 
   axios
-    .get(`https://bewakoof-com-topaz.vercel.app/users/wishlisht/${id}`, {
+    .get(https://bewakoof.onrender.com/users/wishlisht/${id}`, {
       withCredentials: true,
       headers: {
         Authorization: token,
@@ -193,7 +193,7 @@ export const wishRemove = (productId, id) => (dispatch) => {
 
   axios
     .patch(
-      `https://bewakoof-com-topaz.vercel.app/users/removeWish/${id}`,
+      `https://https://bewakoof.onrender.com//users/removeWish/${id}`,
       { productId },
       {
         withCredentials: true,
@@ -216,7 +216,7 @@ export const AddToWish = (productId, id, error, notify) => (dispatch) => {
   let token = localStorage.getItem("jwtoken");
   axios
     .patch(
-      `https://bewakoof-com-topaz.vercel.app/users/addToWishlist/${id}`,
+      `https://bewakoof.onrender.com/users/addToWishlist/${id}`,
       { productId },
       {
         withCredentials: true,
