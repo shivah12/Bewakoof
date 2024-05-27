@@ -4,9 +4,8 @@
   "description": "Bewakoof clone",
   "main": "server.mjs",
   "scripts": {
-    "dev": "node server.mjs",
-    "start": "node server.mjs",
-    
+    "dev": "nodemon server.mjs",
+    "start": "node server.mjs"
   },
   "homepage": "https://bewakoof-backend.onrender.com/",
   "type": "module",
@@ -20,7 +19,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "install": "^0.13.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^6.4.5",
     "nodemon": "^3.1.1",
